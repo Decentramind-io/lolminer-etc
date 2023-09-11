@@ -13,7 +13,7 @@ Install docker according to the [official installation manual](https://docs.dock
 Connect it to the Decentramind.io image repository:
 
 ```
-sudo docker login https://megamind.network/v2/
+sudo docker login https://registry.decentramind.io/v2/
 ```
 You will be prompted for login and password, enter your **Decentramind.io** login and password.
 
@@ -85,13 +85,13 @@ if [[[ "$WORKER" == "null" || ( -z "$WORKER") ];
 #### Create an image
 Build an image with the command 
 ```
-sudo docker build -t megamind.network/lolminer:1 .
+sudo docker build -t registry.decentramind.io/lolminer:1 .
 ```
-Here we build an image in the current folder and assign it tag megamind.network/lolminer:1, where ```megamind.network/``` is a mandatory part, ```lolminer``` is the name of the image (chosen randomly), ```1``` is the version label (chosen randomly, one image can contain several versions).
+Here we build an image in the current folder and assign it tag registry.decentramind.io/lolminer:1, where ```registry.decentramind.io/``` is a mandatory part (docker registry address to save image to), ```lolminer``` is the name of the image (chosen randomly), ```1``` is the version label (chosen randomly, one image can contain several versions).
 
 #### Upload image to the repository
 Upload the image to the repository **Decentramind.io**:
 ```
-sudo docker push megamind.network/lolminer:1
+sudo docker push registry.decentramind.io/lolminer:1
 ```
-From now on, the ```megamind.network/lolminer:1``` image is available to run on the **Decentramind.io** platform. You need to use [Decentramind.io API](https://github.com/Decentramind-io/API-SDK/blob/main/megamind.api.v1.public.json) to run and control tasks.
+From now on, the ```registry.decentramind.io/lolminer:1``` image is available to run on the **Decentramind.io** platform. You need to use [Decentramind.io API](https://github.com/Decentramind-io/API-SDK/blob/main/megamind.api.v1.public.json) to run and control tasks.

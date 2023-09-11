@@ -14,7 +14,7 @@
 Подключим его к репозиторию образов Decentramind.io:
 
 ```
-sudo docker login https://megamind.network/v2/
+sudo docker login https://registry.decentramind.io/v2/
 ```
 Появится запрос на ввод логина и пароля, нужно ввести логин и пароль в системе **Decentramind.io**.
 
@@ -86,13 +86,13 @@ if [[ "$WORKER" == "null" || ( -z "$WORKER") ]];
 #### Создание образа
 Соберем образ командой 
 ```
-sudo docker build -t megamind.network/lolminer:1 .
+sudo docker build -t registry.decentramind.io/lolminer:1 .
 ```
-Здесь мы собираем образ в текущей папке и присваиваем ему тег megamind.network/lolminer:1, где ```megamind.network/``` - обязательная часть, ```lolminer``` - имя образа (выбирается произвольно), ```1``` - метка версии (выбирается произвольно, один образ может содержать несколько версий).
+Здесь мы собираем образ в текущей папке и присваиваем ему тег registry.decentramind.io/lolminer:1, где ```registry.decentramind.io/``` - обязательная часть (адрес docker registry для сохранения образа), ```lolminer``` - имя образа (выбирается произвольно), ```1``` - метка версии (выбирается произвольно, один образ может содержать несколько версий).
 
 #### Выгрузка образа в репозиторий
 Выгрузим образ в репозиторий **Decentramind.io**:
 ```
-sudo docker push megamind.network/lolminer:1
+sudo docker push registry.decentramind.io/lolminer:1
 ```
-С этого момента образ ```megamind.network/lolminer:1``` доступен для запуска на платформе **Decentramind.io**. Для запуска и контроля задач нужно использовать [Decentramind.io API](https://github.com/Decentramind-io/API-SDK/blob/main/megamind.api.v1.public.json).
+С этого момента образ ```registry.decentramind.io/lolminer:1``` доступен для запуска на платформе **Decentramind.io**. Для запуска и контроля задач нужно использовать [Decentramind.io API](https://github.com/Decentramind-io/API-SDK/blob/main/megamind.api.v1.public.json).
